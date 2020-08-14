@@ -1,7 +1,7 @@
 class GoalsController < ApplicationController
     def index 
         goals = Goal.all
-        render json: GoalSerializer.new(goals)
+        render json: goals
     end
 
     def new

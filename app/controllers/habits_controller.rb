@@ -1,7 +1,7 @@
 class HabitsController < ApplicationController
     def index 
         habits = Habit.all
-        render json: HabitSerializer.new(habits)
+        render json: habits
     end
 
     def new
