@@ -15,7 +15,7 @@ class GoalsController < ApplicationController
 
     def show
         goal = Goal.find(params[:id])
-        redner json: GoalSerializer.new(goal)
+        render json: GoalSerializer.new(goal)
     end
 
     def edit

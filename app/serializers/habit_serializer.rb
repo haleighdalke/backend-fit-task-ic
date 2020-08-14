@@ -1,4 +1,4 @@
 class HabitSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :activity, :activity_type, :goals, :users
 end
