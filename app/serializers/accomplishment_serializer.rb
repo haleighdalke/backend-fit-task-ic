@@ -1,4 +1,4 @@
 class AccomplishmentSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :date, :duration, :duration_type, :goal
 end
