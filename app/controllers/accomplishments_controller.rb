@@ -1,7 +1,7 @@
 class AccomplishmentsController < ApplicationController
     def index 
         accomplishments = Accomplishment.all
-        render json: AccomplishmentSerializer.new(accomplishments)
+        render json: accomplishments
     end
 
     def new
