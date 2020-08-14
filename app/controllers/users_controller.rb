@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     def show
         user = User.find(params[:id])
-        render json: UserSerializer(user)
+        render json: UserSerializer.new(user)
     end
 
     def edit
