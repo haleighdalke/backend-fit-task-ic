@@ -10,7 +10,11 @@ class AccomplishmentsController < ApplicationController
 
     def create 
         accomplishment = Accomplishment.new(accomplishment_params)
-        render json: AccomplishmentSerializer.new(accomplishment)
+        if accomplishment.save
+            render json: AccomplishmentSerializer.new(accomplishment)
+        else
+            render json: {error: "accomplishment cannot be saved"}
+        end
     end
 
     def show
@@ -29,6 +33,6 @@ class AccomplishmentsController < ApplicationController
 
     private
     def accomplishment_params
-        params.require(:accomplishment).permit(:date, :duration, duration_type)
+        params.require(:accomplishment).permit(:date, :duration, :duration_type, :goal_id)
     end
 end
