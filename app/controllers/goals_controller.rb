@@ -9,7 +9,7 @@ class GoalsController < ApplicationController
     end
 
     def create 
-        goal = Goal.new(goal_params)
+        goal = Goal.create(goal_params)
         render json: GoalSerializer.new(goal)
     end
 
@@ -24,7 +24,7 @@ class GoalsController < ApplicationController
 
     def update 
         goal = Goal.find(params[:id])
-        goal = Goal.update(goal_params)
+        goal.update(goal_params)
     end
 
     def destroy 
@@ -33,6 +33,6 @@ class GoalsController < ApplicationController
 
     private
     def habit_params
-        params.require(:goal).permit(:frequency, :duration, duration_type)
+        params.require(:goal).permit(:frequency, :duration, :duration_type)
     end
 end

@@ -9,7 +9,7 @@ class HabitsController < ApplicationController
     end
 
     def create 
-        habit = Habit.new(habit_params)
+        habit = Habit.create(habit_params)
         render json: HabitSerializer.new(habit)
     end
 
@@ -24,11 +24,11 @@ class HabitsController < ApplicationController
 
     def update 
         habit = Habit.find(params[:id])
-        habit = Habit.update(habit_params)
+        habit.update(habit_params)
     end
 
     private
     def habit_params
-        params.require(:habit).permit(:activity, :type)
+        params.require(:habit).permit(:activity, :activity_type)
     end
 end

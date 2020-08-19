@@ -28,7 +28,7 @@ class AccomplishmentsController < ApplicationController
 
     def update 
         accomplishment = Accomplishment.find(params[:id])
-        accomplishment = Accomplishment.update(accomplishment_params)
+        accomplishment.update(accomplishment_params)
     end
 
     private
