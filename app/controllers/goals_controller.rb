@@ -9,13 +9,13 @@ class GoalsController < ApplicationController
     end
 
     def create 
-        goal = Goal.new(goal_params)
-        render json: GoalSerializer.new(goal)
+        goal = Goal.create(goal_params)
+        render json: goal
     end
 
     def show
         goal = Goal.find(params[:id])
-        render json: GoalSerializer.new(goal)
+        render json: goal
     end
 
     def edit
@@ -24,7 +24,7 @@ class GoalsController < ApplicationController
 
     def update 
         goal = Goal.find(params[:id])
-        goal = Goal.update(goal_params)
+        goal.update(goal_params)
     end
 
     def destroy 

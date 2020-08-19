@@ -9,13 +9,13 @@ class AccomplishmentsController < ApplicationController
     end
 
     def create 
-        accomplishment = Accomplishment.new(accomplishment_params)
-        render json: AccomplishmentSerializer.new(accomplishment)
+        accomplishment = Accomplishment.create(accomplishment_params)
+        render json: accomplishment
     end
 
     def show
         accomplishment = Accomplishment.find(params[:id])
-        render json: AccomplishmentSerializer.new(accomplishment)
+        render json: accomplishment
     end
 
     def edit
