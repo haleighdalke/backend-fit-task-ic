@@ -25,6 +25,7 @@ class HabitsController < ApplicationController
     def update 
         habit = Habit.find(params[:id])
         habit.update(habit_params)
+        render json: HabitSerializer.new(habit)
     end
 
     private
