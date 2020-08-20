@@ -9,6 +9,7 @@ class AccomplishmentsController < ApplicationController
     end
 
     def create 
+
         accomplishment = Accomplishment.new(accomplishment_params)
         if accomplishment.save
             render json: AccomplishmentSerializer.new(accomplishment)
@@ -19,7 +20,7 @@ class AccomplishmentsController < ApplicationController
 
     def show
         accomplishment = Accomplishment.find(params[:id])
-        render json: AccomplishmentSerializer.new(accomplishment)
+        render json: accomplishment
     end
 
     def edit
