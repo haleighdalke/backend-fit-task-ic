@@ -9,7 +9,6 @@ class HabitsController < ApplicationController
     end
 
     def create 
-        #byebug
         habit = Habit.create(habit_params)
         render json: habit
     end
@@ -26,6 +25,7 @@ class HabitsController < ApplicationController
     def update 
         habit = Habit.find(params[:id])
         habit.update(habit_params)
+        render json: habit
     end
 
     private
