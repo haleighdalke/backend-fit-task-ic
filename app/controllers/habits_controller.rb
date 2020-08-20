@@ -10,12 +10,12 @@ class HabitsController < ApplicationController
 
     def create 
         habit = Habit.create(habit_params)
-        render json: HabitSerializer.new(habit)
+        render json: habit
     end
 
     def show
         habit = Habit.find(params[:id])
-        render json: HabitSerializer.new(habit)
+        render json: habit
     end
 
     def edit
@@ -25,6 +25,7 @@ class HabitsController < ApplicationController
     def update 
         habit = Habit.find(params[:id])
         habit.update(habit_params)
+        render json: habit
     end
 
     private
