@@ -25,10 +25,12 @@ class GoalsController < ApplicationController
     def update 
         goal = Goal.find(params[:id])
         goal.update(goal_params)
+        render json: goal
     end
 
     def destroy 
         goal = Goal.find(params[:id]).destroy
+        render json: goal
     end 
 
     private
