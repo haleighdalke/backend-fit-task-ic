@@ -29,7 +29,6 @@ class AccomplishmentsController < ApplicationController
     def update 
         accomplishment = Accomplishment.find(params[:id])
         accomplishment.update(accomplishment_params)
-        render json: accomplishment
     end
 
     private

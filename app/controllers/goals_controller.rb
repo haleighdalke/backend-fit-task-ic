@@ -34,7 +34,7 @@ class GoalsController < ApplicationController
     end 
 
     private
-    def habit_params
-        params.require(:goal).permit(:frequency, :duration, duration_type)
+    def goal_params
+        params.require(:goal).permit(:frequency, :duration, :duration_type, :habit_id, :user_id)
     end
 end
