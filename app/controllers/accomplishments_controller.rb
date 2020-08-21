@@ -4,10 +4,6 @@ class AccomplishmentsController < ApplicationController
         render json: accomplishments
     end
 
-    def new
-        accomplishment = Accomplishment.new
-    end
-
     def create 
         accomplishment = Accomplishment.new(accomplishment_params)
         if accomplishment.save

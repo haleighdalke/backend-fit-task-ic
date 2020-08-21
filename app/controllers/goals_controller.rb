@@ -29,8 +29,10 @@ class GoalsController < ApplicationController
     end
 
     def destroy 
-        goal = Goal.find(params[:id]).destroy
-        render json: goal
+        goal = Goal.find(params[:id])
+        tempGoal = goal
+        goal.destroy
+        render json: tempGoal
     end 
 
     private

@@ -11,7 +11,7 @@ class UsersController < ApplicationController
             token = encode_token({user_id: user.id})
             render json: {user: UserSerializer.new(user), token: token}
         else
-            render json: {error: 'unable to create user'}
+            render json: {error: 'Unable to Create User'}
         end
     end
 
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
             token = encode_token({user_id: user.id})
             render json: {user: UserSerializer.new(user), token: token}
         else 
-            render json: {error: 'incorrect user or password'}
+            render json: {error: 'Incorrect User or Password'}
         end
     end
 
